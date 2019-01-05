@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
 * {
 	margin: 0;
@@ -9,11 +10,25 @@ body {
 	text-align: center;
 	background-color: #faf8ef;
 }
+body > h1 {
+	font-size: 2.5rem;
+	color: #776e65;
+	line-height: 1;
+	margin-bottom: 0.75rem;
+	padding-top: 2.5rem;
+}
+body > p {
+	font-size: 1rem;
+	color: #776e65;
+	line-height: 1.25;
+	padding-bottom: 1.5rem;
+	opacity: 0.75;
+}
 div.container {
 	display: inline-block;
-	width: 550px;
+	width: 900px;
 	padding: 2rem 1rem;
-	box-sizing: border-box;
+	padding-top: 0;
 }
 div.game {
 	display: block;
@@ -127,4 +142,91 @@ div.game > div.num4096, div.game > div.num8192, div.game > div.num16384, div.gam
 	div.game > div.num4096, div.game > div.num8192, div.game > div.num16384, div.game > div.num32768, div.game > div.num65536 {
 		font-size: 10px;
 	}
+}
+
+div.left {
+	display: block;
+	width: calc(550px);
+	float: left;
+	height: auto;
+	overflow: auto;
+}
+div.right {
+	display: block;
+	float: left;
+	width: calc(350px);
+	overflow: auto;
+}
+div.right div.toparea {
+	height: 3.125rem;
+	display: block;
+	width: 100%;
+	float: left;
+	box-sizing: border-box;
+	font-size: 1rem;
+	line-height: 1.375;
+	font-family: "Ubuntu Mono", monospace;
+	background-color: #000;
+	color: #0f0;
+	padding: 0.875rem;
+}
+div.right div.toparea input, div.right div.toparea button, div.right div.toparea button span {
+	border: none;
+	background-color: transparent;
+	font-size: 1rem;
+	line-height: 1.375;
+	display: block;
+	float: left;
+	color: #0f0;
+	font-family: "Ubuntu Mono", monospace;
+	width: auto;
+}
+div.right div.toparea button {
+	cursor: pointer;
+}
+div.right div.toparea button span:first-child {
+	display: none;
+}
+div.right div.toparea button.paused span:first-child {
+	display: block;
+}
+div.right div.toparea button.paused span:last-child {
+	display: none;
+}
+div.right div.toparea input, div.right div.toparea button {
+	width: 3.5rem;
+	margin-left: 0.5rem;
+	outline: none;
+	opacity: 0.75;
+}
+div.right div.toparea input:focus, div.right div.toparea button:hover {
+	opacity: 1;
+}
+div.right div.toparea > *{
+	font-family: "Ubuntu Mono", monospace;
+	display: block;
+	float: left;
+}
+div.right div.console {
+	height: calc(550px - 5.125rem);
+	overflow-y: hidden;
+	width: 100%;
+	padding: 0.275rem 0.875rem;
+	box-sizing: border-box;
+	background-color: #000;
+	color: #0f0;
+	font-size: 1rem;
+	line-height: 1.375;
+	text-align: left;
+}
+div.right div.console p {
+	padding: 0.6rem 0;
+	font-family: "Ubuntu Mono", monospace;
+	display: block;
+	float: left;
+	width: 100%;
+	overflow: auto;
+}
+div.right div.console p:not(:last-child){
+	border-bottom: 1px solid #0f0;
 }

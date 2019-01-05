@@ -2,6 +2,7 @@ var gamesPerMove = 50;
 var totalMoveScores = [0,0,0,0];
 var totalMoveCount = 0;
 var totalGamesDone = 0;
+var paused = false;
 function makeMove(){
 	totalMoveScores = [0,0,0,0];
 	totalGamesDone = 0;
@@ -26,21 +27,14 @@ function simulateRun(move, move_index){
 	if(totalGamesDone >= gamesPerMove * 4){
 		var bestMove = ["left","right","up","down"][totalMoveScores.indexOf(Math.max(...totalMoveScores))];
 		game.main_move(bestMove);
-		console.log("Best move was " + bestMove.toUpperCase() + " with average score of " + parseFloat(Math.max(...totalMoveScores) / gamesPerMove).toFixed(2) + ".\nAverage move count on all runs was " + parseFloat(totalMoveCount / gamesPerMove).toFixed(2) + " with " + gamesPerMove + " simulations per move.");
+		document.querySelector("div.console").innerHTML += ("<p>Best move was " + bestMove.toUpperCase() + " with average score of " + parseFloat(Math.max(...totalMoveScores) / gamesPerMove).toFixed(2) + ".<br>Average move count on all runs was " + parseFloat(totalMoveCount / gamesPerMove).toFixed(2) + " with " + gamesPerMove + " simulations per move.</p>");
+		(function(){
+			var elem = document.querySelector("div.console");
+			elem.scrollTop = elem.scrollHeight;
+		})();
 		displayBoard();
 
-		if(game.check_gameover() == false){
-			if((Math.max(...totalMoveScores) / gamesPerMove) > 2200){
-				gamesPerMove = 125;
-			}else if((Math.max(...totalMoveScores) / gamesPerMove) > 1600){
-				gamesPerMove = 100;
-			}else if((Math.max(...totalMoveScores) / gamesPerMove) > 1000){
-				gamesPerMove = 75;
-			}else if((Math.max(...totalMoveScores) / gamesPerMove) > 750){
-				gamesPerMove = 68;
-			}else{
-				gamesPerMove = 50;
-			}
+		if(game.check_gameover() == false && !paused){
 			setTimeout(makeMove, 0);
 	    }
 	}
