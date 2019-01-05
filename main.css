@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", sans-serif;
+}
+body {
+	text-align: center;
+	background-color: #faf8ef;
+}
+div.container {
+	display: inline-block;
+	width: 550px;
+	padding: 2rem 1rem;
+	box-sizing: border-box;
+}
+div.game {
+	display: block;
+	width: calc(550px - 2rem);
+	height: calc(550px - 2rem);
+	background-color: #bbada0;
+	box-sizing: border-box;
+	padding: 0.5rem;
+	font-size: 0;
+}
+div.game div {
+	background-color: rgba(238, 228, 218, 0.35);
+	margin: 0.5rem;
+	width: calc(25% - 1rem);
+	height: calc(25% - 1rem);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	float: left;
+	box-sizing: border-box;
+	font-weight: 800;
+	font-size: 3rem;
+	color: #776e65;
+	text-align: center;
+}
+div.game > div.num2 {
+	background: #eee4da;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+}
+div.game > div.num4 {
+	background: #ede0c8;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+}
+div.game > div.num8 {
+	color: #f9f6f2;
+	background: #f2b179;
+}
+div.game > div.num16 {
+	color: #f9f6f2;
+	background: #f59563;
+}
+div.game > div.num32 {
+	color: #f9f6f2;
+	background: #f67c5f;
+}
+div.game > div.num64 {
+	color: #f9f6f2;
+	background: #f65e3b;
+}
+div.game > div.num128 {
+	color: #f9f6f2;
+	background: #edcf72;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
+	font-size: 45px;
+}
+@media screen and (max-width: 520px) {
+	div.game > div.num128 {
+		font-size: 25px;
+	}
+}
+div.game > div.num256 {
+	color: #f9f6f2;
+	background: #edcc61;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+	font-size: 45px;
+}
+@media screen and (max-width: 520px) {
+	div.game > div.num256 {
+		font-size: 25px;
+	}
+}
+div.game > div.num512 {
+	color: #f9f6f2;
+	background: #edc850;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+	font-size: 45px;
+}
+@media screen and (max-width: 520px) {
+	div.game > div.num512 {
+		font-size: 25px;
+	}
+}
+div.game > div.num1024 {
+	color: #f9f6f2;
+	background: #edc53f;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
+	font-size: 35px;
+}
+@media screen and (max-width: 520px) {
+	div.game > div.num1024 {
+		font-size: 15px;
+	}
+}
+div.game > div.num2048 {
+	color: #f9f6f2;
+	background: #edc22e;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+	font-size: 35px;
+}
+@media screen and (max-width: 520px) {
+	div.game > div.num2048 {
+		font-size: 15px;
+	}
+}
+div.game > div.num4096, div.game > div.num8192, div.game > div.num16384, div.game > div.num32768, div.game > div.num65536 {
+	color: #f9f6f2;
+	background: #3c3a32;
+	font-size: 30px;
+}
+@media screen and (max-width: 520px) {
+	div.game > div.num4096, div.game > div.num8192, div.game > div.num16384, div.game > div.num32768, div.game > div.num65536 {
+		font-size: 10px;
+	}
+}
