@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Jacob: a simple, non-heuristic AI to play 2048</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<link rel="shortcut icon" type="image/png" href="favicon.png">
-</head>
-<body>
-	<h1>Jacob</h1>
-	<p>a simple, non-heuristic AI to play 2048</p>
-	<div class="container">
-		<div class="left">
-			<div class="game"></div>
-		</div>
-		<div class="right">
-			<div class="toparea">
-				<p>Simulations/Move:</p>
-				<input type="number" id="simulCount" value="50">
-				<button onclick="this.classList.toggle('paused');gamesPerMove = document.getElementById('simulCount').value;paused = !paused;if(!paused){ setTimeout(makeMove, 0); }"><span>Run AI</span><span>Stop AI</span></button>
-			</div>
-			<div class="console">
-
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript" src="2048.js"></script>
-	<script type="text/javascript" src="gui.js"></script>
-	<script type="text/javascript" src="jacob.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jacob: a Monte-Carlo based AI to beat 2048</title>
+    <link rel="stylesheet" type="text/css" href="main.css?v=1" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+  </head>
+  <body>
+    <div class="app">
+      <h1>Jacob</h1>
+      <p>a Monte-Carlo based AI to beat 2048</p>
+      <div class="container">
+        <div class="left">
+          <div class="game"></div>
+          <div class="milestones">
+            <h1></h1>
+          </div>
+        </div>
+        <div class="right">
+          <div class="main">
+            <div class="toparea">
+              <p>Simulations/Move:</p>
+              <input type="number" id="simulCount" value="200" />
+              <button>
+                <p class="paused">Run AI</p>
+                <p class="not-paused">Stop AI</p>
+                <p class="restart">Restart AI</p>
+              </button>
+            </div>
+            <div class="console"></div>
+          </div>
+          <div class="meta">
+            <p>Try increasing the simulations per move for better AI performance!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="separator">
+      <span>About This Project</span>
+    </div> -->
+    <div class="bottom"></div>
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
 </html>

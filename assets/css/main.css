@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  text-align: center;
+  background-color: #faf8ef;
+}
+
+div.app > h1 {
+  font-size: 2.75rem;
+  color: #776e65;
+  line-height: 1;
+  margin-bottom: 1rem;
+  padding-top: 2.5rem;
+}
+div.app > p {
+  font-size: 1rem;
+  color: #776e65;
+  line-height: 1.25;
+  padding-bottom: 2.5rem;
+  opacity: 0.75;
+}
+@media only screen and (max-width: 550px) {
+  div.app > h1 {
+    margin-bottom: 0.65rem;
+    padding-top: 1.25rem;
+    font-size: 2rem;
+  }
+  div.app > p {
+    padding-bottom: 1.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+div.container {
+  display: inline-block;
+  width: 950px;
+  padding: 1rem;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 950px) {
+  div.container {
+    width: 100%;
+  }
+}
+
+div.milestones {
+  width: calc(550px - 2rem);
+  box-sizing: border-box;
+  margin: 2rem 0;
+}
+div.milestones h1 {
+  text-align: center;
+  display: block;
+  font-size: 1.5rem;
+  color: #776e65;
+  font-weight: 700;
+}
+div.milestones h1 .tile {
+  display: inline;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  margin: 0 0.75rem;
+}
+
+div.game {
+  width: calc(550px - 2rem);
+  height: calc(550px - 2rem);
+  background-color: #bbada0;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  font-size: 0;
+  border-radius: 5px;
+  max-width: 100%;
+}
+@media only screen and (max-width: 950px) {
+  div.game {
+    margin: 0 auto;
+  }
+  div.milestones {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  div.game {
+    width: calc(100vw - 2rem);
+    height: calc(100vw - 2rem);
+  }
+  div.milestones {
+    zoom: 85%;
+  }
+}
+div.game div {
+  border-radius: 5px;
+  background-color: rgba(238, 228, 218, 0.35);
+  margin: 0.5rem;
+  width: calc(25% - 1rem);
+  height: calc(25% - 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  box-sizing: border-box;
+  font-weight: 700;
+  font-size: 48px;
+  color: #776e65;
+  text-align: center;
+}
+@media only screen and (max-width: 520px) {
+  div.game {
+    padding: 0.3rem;
+  }
+  div.game div {
+    margin: 0.3rem;
+    width: calc(25% - 0.6rem);
+    height: calc(25% - 0.6rem);
+  }
+}
+div.num2 {
+  background: #eee4da !important;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+}
+div.num4 {
+  background: #ede0c8 !important;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+}
+div.num8 {
+  color: #f9f6f2 !important;
+  background: #f2b179 !important;
+}
+div.num16 {
+  color: #f9f6f2 !important;
+  background: #f59563 !important;
+}
+div.num32 {
+  color: #f9f6f2 !important;
+  background: #f67c5f !important;
+}
+div.num64 {
+  color: #f9f6f2 !important;
+  background: #f65e3b !important;
+}
+@media screen and (max-width: 520px) {
+  div.game > div.num2,
+  div.game > div.num4,
+  div.game > div.num8,
+  div.game > div.num16,
+  div.game > div.num32,
+  div.game > div.num64 {
+    font-size: 28px;
+  }
+}
+div.num128 {
+  color: #f9f6f2 !important;
+  background: #edcf72 !important;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
+}
+div.game > div.num128 {
+  font-size: 45px;
+}
+@media screen and (max-width: 520px) {
+  div.game > div.num128 {
+    font-size: 25px;
+  }
+}
+div.num256 {
+  color: #f9f6f2 !important;
+  background: #edcc61 !important;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+}
+div.game > div.num256 {
+  font-size: 45px;
+}
+@media screen and (max-width: 520px) {
+  div.game > div.num256 {
+    font-size: 25px;
+  }
+}
+div.num512 {
+  color: #f9f6f2 !important;
+  background: #edc850 !important;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+}
+div.game > div.num512 {
+  font-size: 45px;
+}
+@media screen and (max-width: 520px) {
+  div.game > div.num512 {
+    font-size: 25px;
+  }
+}
+div.num1024 {
+  color: #f9f6f2 !important;
+  background: #edc53f !important;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
+}
+div.game > div.num1024 {
+  font-size: 35px;
+}
+@media screen and (max-width: 520px) {
+  div.game > div.num1024 {
+    font-size: 20px;
+  }
+}
+div.num2048 {
+  color: #f9f6f2 !important;
+  background: #edc22e !important;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+}
+div.game > div.num2048 {
+  font-size: 35px;
+}
+@media screen and (max-width: 520px) {
+  div.game > div.num2048 {
+    font-size: 20px;
+  }
+}
+div.num4096,
+div.num8192,
+div.num16384,
+div.num32768,
+div.num65536 {
+  color: #f9f6f2 !important;
+  background: #3c3a32 !important;
+}
+div.game > div.num4096,
+div.game > div.num8192,
+div.game > div.num16384,
+div.game > div.num32768,
+div.game > div.num65536 {
+  font-size: 30px;
+}
+@media screen and (max-width: 520px) {
+  div.game > div.num4096,
+  div.game > div.num8192,
+  div.game > div.num16384,
+  div.game > div.num32768,
+  div.game > div.num65536 {
+    font-size: 15px;
+  }
+}
+
+div.left {
+  display: block;
+  width: 550px;
+  float: left;
+  height: auto;
+}
+
+div.right {
+  display: block;
+  float: left;
+  width: 350px;
+}
+div.right div.main {
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 950px) {
+  div.left,
+  div.right {
+    width: 100%;
+    clear: both;
+  }
+}
+
+div.right div.toparea {
+  height: 3.125rem;
+  display: block;
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1.375;
+  font-family: 'Ubuntu Mono', monospace;
+  background-color: #000;
+  color: #0f0;
+  padding: 0.875rem;
+}
+div.right div.toparea input,
+div.right div.toparea button,
+div.right div.toparea button p {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  line-height: 1.375;
+  display: block;
+  float: left;
+  color: #0f0;
+  font-family: 'Ubuntu Mono', monospace;
+  width: auto;
+}
+div.right div.toparea button {
+  cursor: pointer;
+  float: right;
+  width: auto !important;
+}
+
+div.right div.toparea button p {
+  display: none;
+}
+body:not(.restart-button-available).paused div.right div.toparea button p.paused,
+body:not(.restart-button-available):not(.paused) div.right div.toparea button p.not-paused,
+body.restart-button-available div.right div.toparea button p.restart {
+  display: block;
+}
+
+div.right div.toparea input,
+div.right div.toparea button {
+  width: 3.5rem;
+  margin-left: 0.5rem;
+  outline: none;
+  opacity: 0.75;
+}
+div.right div.toparea input:focus {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  div.right div.toparea button:hover {
+    opacity: 1;
+  }
+}
+
+div.right div.toparea > * {
+  font-family: 'Ubuntu Mono', monospace;
+  display: block;
+  float: left;
+}
+div.right div.console {
+  height: calc(550px - 5.125rem);
+  width: 100%;
+  padding: 0.275rem 0.875rem;
+  padding-top: 0;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #0f0;
+  font-size: 1rem;
+  line-height: 1.375;
+  text-align: left;
+  overflow-y: hidden;
+}
+body.paused div.right div.console,
+body.restart-button-available div.right div.console {
+  overflow-y: auto;
+}
+div.right div.console p {
+  padding: 0.6rem 0;
+  font-family: 'Ubuntu Mono', monospace;
+  display: block;
+  float: left;
+  width: 100%;
+  overflow: auto;
+}
+div.right div.console p:first-child {
+  padding-top: 0;
+}
+div.right div.console p:not(:last-child) {
+  border-bottom: 1px solid #0f0;
+}
+
+div.right div.meta {
+  margin: 2rem 0;
+}
+div.right div.meta p {
+  color: #776e65;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 550px) {
+  div.right div.meta {
+    margin: 1rem 0;
+  }
+}
+
+.separator {
+  position: relative;
+  height: 1.25rem;
+  color: #776e65;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+.separator span {
+  height: 1.25rem;
+  display: inline-block;
+  line-height: 1.25rem;
+  padding: 0 1rem;
+  background-color: #faf8ef;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.separator:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  left: 0;
+  background-color: #776e65;
+  z-index: -1;
+  opacity: 0.25;
+}
