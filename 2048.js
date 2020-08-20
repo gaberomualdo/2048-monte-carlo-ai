@@ -177,24 +177,30 @@ function getNewGameObj(){
 			//this.board = self_ref.board;
 		},
 		check_gameover: function(){
-			var gamemover = true;
-			var currentBoard = [this.board[0].slice(0), this.board[1].slice(0), this.board[2].slice(0), this.board[3].slice(0)];
+			for(var rowIdx = 0; rowIdx < this.board.length; rowIdx++) {
+				var row = this.board[rowIdx];
+				for(var itemIdx = 0; itemIdx < row.length; itemIdx++) {
+					var item = row[itemIdx];
 
-			this.move("left");
-			if(this.board.join(",") == currentBoard.join(",")){
-				this.move("right");
-				if(this.board.join(",") == currentBoard.join(",")){
-					this.move("up");
-					if(this.board.join(",") == currentBoard.join(",")){
-						this.move("down");
-						if(this.board.join(",") == currentBoard.join(",")){
-							return true;
+					if(item == "") {
+						return false;
+					}
+
+					if(itemIdx + 1 < row.length) {
+						if(row[itemIdx + 1] == item) {
+							return false;
+						}
+					}
+
+					if(rowIdx + 1 < this.board.length) {
+						if(this.board[rowIdx + 1][itemIdx] == item) {
+							return false;
 						}
 					}
 				}
 			}
-			this.board = currentBoard;
-			return false;
+
+			return true;
 		},
 		main_move: function(direction){
 			var startGame = this.board.join(",");
@@ -212,7 +218,7 @@ function getNewGameObj(){
 					}
 				});
 			});
-			
+
 			return score;
 		}
 	};
