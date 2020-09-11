@@ -258,10 +258,6 @@ div.right {
   float: left;
   width: 350px;
 }
-div.right div.main {
-  overflow: hidden;
-  border-radius: 5px;
-}
 
 @media only screen and (max-width: 950px) {
   div.left,
@@ -269,31 +265,36 @@ div.right div.main {
     width: 100%;
     clear: both;
   }
+  div.right {
+    margin-top: 1rem;
+  }
+}
+
+div.right div.main {
+  overflow: hidden;
+  display: flex;
+  height: calc(550px - 2rem);
+  flex-direction: column;
 }
 
 div.right div.toparea {
-  height: 3.125rem;
   display: block;
   width: 100%;
   float: left;
   box-sizing: border-box;
-  font-size: 1rem;
-  line-height: 1.375;
   font-family: 'Ubuntu Mono', monospace;
-  background-color: #000;
-  color: #0f0;
-  padding: 0.875rem;
+  color: #776e65;
+  padding-bottom: 0.75rem;
+  padding-top: 0.25rem;
+  border-bottom: 1px solid #bbada0;
 }
 div.right div.toparea input,
 div.right div.toparea button,
 div.right div.toparea button p {
   border: none;
   background-color: transparent;
-  font-size: 1rem;
-  line-height: 1.375;
   display: block;
   float: left;
-  color: #0f0;
   font-family: 'Ubuntu Mono', monospace;
   width: auto;
 }
@@ -317,8 +318,24 @@ div.right div.toparea button {
   width: 3.5rem;
   margin-left: 0.5rem;
   outline: none;
-  opacity: 0.75;
+  opacity: 0.8;
+  background-color: #776e65;
+  color: #f9f6f2 !important;
+  padding: 0 0.45rem !important;
+  border-radius: 3px;
+  font-size: 0.9rem;
 }
+
+body:not(.restart-button-available).paused div.right div.toparea button {
+  background-color: #27ae60;
+}
+body:not(.restart-button-available):not(.paused) div.right div.toparea button {
+  background-color: #e74c3c;
+}
+body.restart-button-available div.right div.toparea button {
+  background-color: #f39c12;
+}
+
 div.right div.toparea input:focus {
   opacity: 1;
 }
@@ -333,37 +350,46 @@ div.right div.toparea > * {
   font-family: 'Ubuntu Mono', monospace;
   display: block;
   float: left;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
 }
 div.right div.console {
   height: calc(550px - 5.125rem);
   width: 100%;
-  padding: 0.275rem 0.875rem;
-  padding-top: 0;
+  padding: 0;
+  padding-top: 1rem;
   box-sizing: border-box;
-  background-color: #000;
-  color: #0f0;
   font-size: 1rem;
   line-height: 1.375;
   text-align: left;
   overflow-y: hidden;
+  color: #776e65;
+  flex-grow: 1;
 }
 body.paused div.right div.console,
 body.restart-button-available div.right div.console {
   overflow-y: auto;
 }
-div.right div.console p {
-  padding: 0.6rem 0;
-  font-family: 'Ubuntu Mono', monospace;
+div.right div.console div {
+  padding: 0.6rem 0.8rem;
   display: block;
   float: left;
   width: 100%;
   overflow: auto;
+  background-color: #eee4da;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
-div.right div.console p:first-child {
-  padding-top: 0;
+div.right div.console div,
+div.right div.console div > * {
+  font-family: 'Ubuntu Mono', monospace;
 }
-div.right div.console p:not(:last-child) {
-  border-bottom: 1px solid #0f0;
+div.right div.console div span {
+  opacity: 0.65;
+}
+div.right div.console div:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 div.right div.meta {
@@ -409,4 +435,100 @@ div.right div.meta p {
   background-color: #776e65;
   z-index: -1;
   opacity: 0.25;
+}
+
+div.bottom {
+  margin-top: 2.5rem;
+  padding: 0 calc(((100% - 950px) / 2) + 1rem);
+}
+@media only screen and (max-width: 950px) {
+  div.bottom {
+    padding: 0 1rem;
+  }
+}
+
+div.bottom h1 {
+  color: #776e65;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+div.bottom > *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  text-align: left;
+  margin-bottom: 2rem;
+  color: #776e65;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  opacity: 0.85;
+}
+
+div.bottom ul {
+  margin-left: 2rem;
+}
+
+div.bottom a {
+  text-decoration: none;
+  color: #0e91ff;
+  border-bottom: 1px dotted #0e91ff;
+  user-select: text;
+}
+div.bottom a:hover::selection {
+  border-bottom-style: solid;
+  background-color: #0e91ff;
+  color: var(--white-color);
+}
+div.bottom a:hover {
+  border-bottom-style: solid;
+}
+
+div.bottom p.start-text {
+  line-height: 1.65;
+  margin-bottom: 0.4rem;
+}
+div.bottom p.start-text.default-margin {
+  margin-bottom: 2.5rem;
+}
+
+div.bottom .links {
+  text-align: center;
+  font-size: 0;
+}
+div.bottom .links a {
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none !important;
+  border: none !important;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  background-color: #0e91ff;
+  opacity: 0.85;
+  margin: 0 0.3rem;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 520px) {
+  div.bottom .links a {
+    margin: 0;
+    margin-bottom: 0.6rem;
+    width: 100%;
+  }
+}
+
+div.bottom .links a:hover {
+  opacity: 1;
+}
+
+div.scroll-down {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background-color: #eee4da;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #776e65;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: opacity 0.2s ease-in-out;
 }

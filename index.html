@@ -3,13 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jacob: a Monte-Carlo based AI to beat 2048</title>
+    <meta name="description" content="Jupiter is a Monte-Carlo based AI to beat 2048 written by Gabriel Romualdo." />
+    <title>Jupiter: a Monte-Carlo based AI to beat 2048</title>
     <link rel="stylesheet" type="text/css" href="main.css?v=1" />
-    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#faf8ef" />
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#faf8ef" />
+
+    <link rel="preload" href="game.js" />
   </head>
   <body>
     <div class="app">
-      <h1>Jacob</h1>
+      <h1>Jupiter</h1>
       <p>a Monte-Carlo based AI to beat 2048</p>
       <div class="container">
         <div class="left">
@@ -37,10 +57,89 @@
         </div>
       </div>
     </div>
-    <!-- <div class="separator">
+    <div class="separator">
       <span>About This Project</span>
-    </div> -->
-    <div class="bottom"></div>
+    </div>
+    <div class="bottom">
+      <div class="links">
+        <a href="https://play2048.co/" class="main-link" style="background-color: #e74c3c">Blog Post</a>
+        <a href="https://github.com/xtrp/jupiter" class="main-link" style="background-color: #27ae60">Source Code</a>
+        <a href="https://play2048.co/" class="main-link">Original Game</a>
+      </div>
+      <p class="start-text">
+        Jupiter is an AI which uses a <strong>Monte Carlo Search Tree algorithm</strong> to beat the popular online game,
+        <a href="https://play2048.co/">2048</a>.
+      </p>
+      <p class="start-text">
+        Given a high amount of simulations per move, Jupiter <strong>can achieve the 2048 tile almost 100% of the time</strong>.
+      </p>
+      <p class="start-text default-margin">
+        Jupiter is a project by developer and current high school student <a href="https://xtrp.io/">Gabriel Romualdo</a>.
+      </p>
+      <!-- to be written soon: -->
+      <!--  
+        <h1>Algorithm &amp; Performance</h1>
+        <p></p>
+      -->
+      <h1>About</h1>
+      <p>
+        Jupiter started as a small AI project in January 2018. I got the idea of using Monte Carlo simulations and search trees as a method to play
+        2048 from <a href="https://stackoverflow.com/a/23853848/10007107">this StackOverflow answer</a>.
+      </p>
+      <p>
+        I wrote a basic clone of what was described in the answer and built on the idea with an interactive console and my own 2048 game
+        implementation, in contrast to the existing open sourced game code used in other AI projects. At this time, Jupiter ran on the main JavaScript
+        thread, and had decent performance and speed: it was able to run ~800 Monte Carlo simulations of possible games per second. Running the game
+        at 200 simulations per move gave roughly 4 moves per second. This amount of simulations reaches the winning 2048 tile about 65-75% of the
+        time.
+      </p>
+      <p>
+        In August 2020, I took a look at the project once again and noticed the potential to improve both performance and speed of the AI. I did some
+        more research on Monte Carlo simulations and search trees, notably watching
+        <a
+          href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/lecture-videos/lecture-6-monte-carlo-simulation/"
+          >a great lecture</a
+        >
+        by MIT Prof. Guttag in MIT's 6.0002 undergraduate course. In the one and a half years since I had first started the project, I'd also learned
+        and used numerous modern JavaScript features, frameworks, and libraries. This put in me the unique position to use these new skills to extend
+        this project vastly from performance, speed, bundle size, and design perspectives.
+      </p>
+      <p>
+        So, I spent time refactoring existing code and replacing older algorithms with newer and more performant ones. In particular, I took advantage
+        of modern JavaScript features like
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web Workers</a> to differ tasks to new threads
+        and utilize concurrency capabilities. I also added Webpack to the project for the automated speed and bundle size optimizations built into
+        many of its loaders. With new CSS and design skills I had learned over the past one and half years, I built a new design for the site, with a
+        clearer console and mobile responsiveness. And finally, among many other features, I added "tile milestones" to let users know how fast the AI
+        had reached certain tiles in the game.
+      </p>
+      <p>
+        With the numerous updates to the project in 2020, Jupiter was now able to run ~2650 simulations of possible games per second. Running the game
+        at 200 simulations per move gave around 13 moves per second. This indicated that <strong>performance had more than tripled</strong> with the
+        new updates. Moreover, a new addition to the code allowed for performance to grow and scale horizontally by adding Web Workers and threads as
+        general computing speed increases over time.
+      </p>
+      <p>
+        All in all, the two year gap in which I learned invaluable frontend development and programming skills allowed me to improve the AI
+        drastically in many areas while maintaining the original, extremely effective Monte Carlo based algorithm which stayed the same throughout the
+        development process.
+      </p>
+      <p>
+        I hope you like the project! If you'd like to read more about me or see more of my projects, check out my personal website and blog at
+        <a href="https://xtrp.io/">xtrp.io</a>.
+      </p>
+      <p style="text-align: center">
+        <em>&mdash; Gabriel Romualdo, August 2020</em>
+      </p>
+      <h1>License &amp; Credits</h1>
+      <p>
+        Jupiter is licensed under the MIT License. Code for the AI, site, and 2048 game code was written by
+        <a href="https://xtrp.io/">Gabriel Romualdo</a>, with some colors used from the
+        <a href="https://github.com/gabrielecirulli/2048">original 2048 project</a>. The original idea for the AI algorithm used comes from
+        <a href="https://stackoverflow.com/a/23853848/10007107">this StackOverflow answer</a>.
+      </p>
+    </div>
+    <div class="scroll-down">Scroll Down to Read About Jupiter</div>
     <script type="text/javascript" src="game.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
