@@ -1,5 +1,5 @@
 <h1 align="center"><a href="https://xtrp.github.io/jupiter/">Jupiter</a></h1>
-<p align="center">a Monte-Carlo based AI to beat 2048</p>
+<p align="center">a Monte-Carlo based AI to beat 2048 &bull; by <a href="https://xtrp.io/">Gabriel Romualdo</a></p>
 
 ## Description
 
