@@ -1,9 +1,11 @@
 # [Jupiter](https://xtrp.github.io/jupiter/)
-![Demo Image](demo-image.png)
 
 ## Description
 
-Jupiter is a simple AI that plays 2048. The AI uses a [Monte Carlo Tree Search](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search) (MCTS) algorithm, and can win consistently given a sufficient number of simulations, which can be easily changed on the site.
+Jupiter an AI that uses a [Monte Carlo Tree Search](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search) (MCTS) algorithm to beat the popular online game [2048](https://play2048.co/). Jupiter is run on the web, and can consistently win (achieve the 2048 tile) given a sufficient number of simulations, a number which can be easily changed on the site.
+
+![Demo Image](demo-image.png)
+
 
 ## Algorithm
 
