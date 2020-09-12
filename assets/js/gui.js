@@ -54,6 +54,7 @@ function initGUI(makeMove, startGame) {
   pauseOrRestartBtn.addEventListener('click', function () {
     if (document.body.classList.contains('restart-button-available')) {
       startGame();
+      secondsSinceStart = 0;
       document.body.classList.remove('restart-button-available');
     } else {
       document.body.classList.toggle('paused');
