@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://xtrp.github.io/jupiter/">Jupiter</a></h1>
+<h1 align="center"><a href="https://jupiter.xtrp.io/">Jupiter</a></h1>
 <p align="center"><em>a Monte-Carlo based AI to beat 2048</em></p>
 
 ## Description
