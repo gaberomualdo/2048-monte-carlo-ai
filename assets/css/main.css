@@ -466,19 +466,56 @@ div.bottom ul {
   margin-left: 2rem;
 }
 
-div.bottom a {
+div.bottom a:not(.styled) {
   text-decoration: none;
   color: #0e91ff;
   border-bottom: 1px dotted #0e91ff;
   user-select: text;
 }
-div.bottom a:hover::selection {
+div.bottom a:not(.styled):hover::selection {
   border-bottom-style: solid;
   background-color: #0e91ff;
   color: var(--white-color);
 }
-div.bottom a:hover {
+div.bottom a:not(.styled):hover {
   border-bottom-style: solid;
+}
+
+div.bottom a.styled {
+  display: flex;
+  width: 100%;
+  min-height: 2rem;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #eee4da;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out, fill 0.2s ease-in-out;
+  color: #5f5850;
+  fill: #5f5850;
+}
+div.bottom a.styled:hover {
+  opacity: 1;
+}
+div.bottom a.styled > span.text {
+  flex-basis: 100%;
+  padding-right: 0.6rem;
+  font-size: 1.25rem;
+  line-height: 1.65;
+}
+div.bottom a.styled > span.arrow {
+  flex-basis: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+div.bottom a.styled:hover > span.arrow {
+  transform: translateX(0.5rem);
+}
+div.bottom a.styled > span.arrow > * {
+  flex-basis: 100%;
 }
 
 div.bottom p.start-text {
